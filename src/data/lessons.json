@@ -1,0 +1,1103 @@
+[
+  {
+    "id": "trail-edge-drainage",
+    "category": "Trails, Fences & Bridges",
+    "title": "Building a Durable Trail Edge and Simple Drainage",
+    "level": "beginner",
+    "estimatedMinutes": 16,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "Water that stays on the tread fails the edge. Feet only finish the job.",
+      "Outslope should be barely there. If your ankles roll, you went too far.",
+      "A berm on the downhill side is a dam. Open it before you add any soil.",
+      "Do not cap a rut with loose fill. Fix the shape, then pack thin layers."
+    ],
+    "content": "Walk the path as a place water has to leave, not as a line to pretty up. If rain would run down the trail, the edge is already losing.\n\n## What you do\n\nStand on the tread and face downhill, across the trail, not along it. The walking surface should fall a little that way. The Forest Service trail notebook puts the test in the body: the outslope should be barely detectable, and if your ankles roll, there is too much of it. A thumb of fall across a normal footpath is in the neighborhood of a working cross-slope. You are not building a banked turn.\n\nThen look for the dam. Spoil, roots, or a grass ridge on the outer edge hold water on the tread. Water turns and runs down the grade. That cuts a rut. The rut takes the next storm. The edge slumps into the rut. Someone throws loose soil on top. The soil leaves. That is the usual failure, and it is visible in the cupped path in the photo below.\n\nOpen the berm. Restore a slight fall to the downhill side. If the edge has already dropped away, move the tread a little into the hill instead of hanging new fill in the air. Pack what you disturb in thin layers. A boot heel beats a fluffy cap.\n\nIf the backslope is a raw cliff, it will keep feeding the path. Knock the top back when you can. Do not leave the spoil as a new berm.\n\nOn a long grade, outslope alone will not keep water from gaining speed. That is the next lesson: a dip or a bar, with an outlet that is actually lower than the trail. If the trail crosses a seep or the toe of a slide, stop and get a second set of eyes before you cut a bigger bench.",
+    "illustrations": [
+      {
+        "type": "trail-cross-section",
+        "description": "A slice across a bench trail. Uphill is the cut. The tread falls toward the downhill edge so water can sheet off.",
+        "alt": "Cross-section of a bench trail. The tread slopes gently toward the downhill side, with a toggle to show a berm trapping water.",
+        "caption": "Toggle Outslope and Berm failure. The thing to see is whether water can leave, or whether a ridge turns it down the trail."
+      },
+      {
+        "type": "photo",
+        "src": "/field/trail-edge.jpg",
+        "description": "A chaparral bench trail with the tread cupped into a groove. The outer shoulder sits higher than the low line, so water will run along the path.",
+        "alt": "Dirt trail cut into a dry hillside, with a shallow rut along the inner edge and the downhill shoulder higher than the walking line.",
+        "caption": "Look at the low groove and the higher outer edge. That edge is acting as a berm. Water is already choosing the rut."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Addressing erosion: outslope and the berm",
+        "url": "https://www.youtube.com/watch?v=xuxBVf2jJpk",
+        "duration": "6 min — watch the first 2",
+        "watchFor": "The tread sitting lower than the downhill edge, and the sentence about water needing to keep moving across the trail. The later minutes cover dips and bars."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "outslope",
+        "kind": "outslope-visual"
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Trail crews learned this by watching the same paths fail in the same order: a ridge forms on the outer edge, water turns and runs down the tread, a rut locks in, and fresh soil poured into the rut leaves with the next rain. The cross-section — tread, backslope, downhill edge — is just a way to draw what a walk in the rain already shows.",
+      "verified": "The Forest Service Trail Construction and Maintenance Notebook turned that crew habit into a written test: outslope should be barely visible, and if your ankles roll downhill there is too much of it. The same notebooks, and later erosion work on trails in dry country, keep finding that a berm matters more than a perfect percent. Partial shade on a solar panel is a different lesson. Here, the repeated measurement is simple: after rain, is the soil leaving across the edge, or down the trail?",
+      "wrong": "People add fill on top of a rut, build a steep cross-slope because a drawing said 8 percent, or leave the excavation spoil as a neat ridge. Check after the next rain, not at the end of the work day. If water still has a groove, the shape is wrong no matter how tidy it looked at noon.",
+      "decision": "On a reserve bench, this decides whether you open the outer edge or import a load of soil. Importing soil without changing the shape feeds the next rut. If the lip has already fallen away, the decision flips again: shift the tread into the hill instead of rebuilding a fill that has nowhere to sit."
+    },
+    "fieldChecks": [
+      {
+        "id": "water-exit",
+        "label": "I can point to where rain would leave this tread, not just where it would run downhill."
+      },
+      {
+        "id": "berm-open",
+        "label": "The downhill edge is not a berm. If it was, I opened it."
+      },
+      {
+        "id": "ankle-test",
+        "label": "The cross-slope is barely there. My ankles do not roll."
+      },
+      {
+        "id": "no-loose-cap",
+        "label": "I am not about to throw loose soil on top of a rut."
+      }
+    ],
+    "tryThis": {
+      "title": "Read one bend of tread",
+      "minutes": 8,
+      "steps": [
+        "Pick twenty steps of trail you will actually work.",
+        "After a rain, or with a bottle of water if the day is dry, see whether water sheets off or turns down the path.",
+        "Note the spot where it turns, and whether a berm, a root, or a rut is the cause."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "What is the main job of a slight outslope?",
+        "options": [
+          "Sheet water across the trail and off the downhill edge",
+          "Hold water on the tread so it soaks in",
+          "Make the trail steeper down the middle",
+          "Mark the property line"
+        ],
+        "answer": 0,
+        "explanation": "Water that sheets off does not gain speed down the trail. Holding it, or sending it down the middle, is how a rut starts."
+      },
+      {
+        "kind": "truefalse",
+        "question": "A berm of spoil on the downhill edge helps the trail drain.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "A berm is a dam. It forces water to turn and run down the tread."
+      },
+      {
+        "kind": "order",
+        "question": "Put the usual edge failure in the order it happens.",
+        "options": [
+          "A berm or ridge keeps water from leaving",
+          "Water runs down the tread and cuts a rut",
+          "The downhill edge slumps into the rut",
+          "Loose fill is thrown on top and washes off"
+        ],
+        "explanation": "The soil added at the end is not the start of the problem. The water that could not leave is."
+      },
+      {
+        "kind": "spot",
+        "figure": "trail-berm",
+        "question": "What is the problem in this slice?",
+        "options": [
+          "The downhill edge is raised, so water cannot get off the tread",
+          "The backslope is too gentle",
+          "The trail is outsloped and shedding",
+          "The tread is packed too hard"
+        ],
+        "answer": 0,
+        "explanation": "The hump at the outer edge turns water down the length of the trail. Open that ridge."
+      }
+    ],
+    "resources": [
+      {
+        "title": "USFS Trail Construction and Maintenance Notebook — foundation and outslope",
+        "url": "https://www.fs.usda.gov/eng/pubs/htmlpubs/htm00232839/page05.htm",
+        "note": "The field test is in the text: barely detectable, and too much if your ankles roll."
+      }
+    ]
+  },
+  {
+    "id": "water-bar-spacing",
+    "category": "Trails, Fences & Bridges",
+    "title": "Water Bars and Dips: Angle, Outlet, Spacing",
+    "level": "beginner",
+    "estimatedMinutes": 14,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "A rolling dip is kinder than a bar. Use a bar when the grade will not hold a dip.",
+      "Aim the bar at about 45 degrees or steeper. Square bars clog.",
+      "The outlet is the point. Do not park the spoil in it.",
+      "Above roughly 20 percent grade, a water bar is usually the wrong tool."
+    ],
+    "content": "Outslope sheds water that is already on a short piece of tread. On a long climb, water still gathers speed. You break that run with a dip or a bar.\n\n## What you do\n\nPrefer a rolling dip or grade reversal when the hillside allows it: a long, gentle sag that tips water off, then a rise back to grade. People walk it without thinking. Build the outlet so it does not dump onto a raw slope that will gully.\n\nA water bar is the backup, not the prize. The Forest Service notebook is blunt that most bars fail because they are too square and too short. Install the bar at least about 45 degrees to the trail, steeper as the grade climbs toward 5 percent or the soil is easy to move. The low end points off the downhill side. Anchor the upper end into the cut bank. A short bar gets installed flatter, and a flat bar clogs.\n\nThe outlet has to be open and lower than the tread. Soil you dug out does not belong there. On grades steeper than about 7 to 10 percent, soil placed just below the bar often erodes out from under the people who walk there. Think of the bar as reinforcement for a dip, not as a speed bump standing proud of the path.\n\nSpacing shortens as the trail gets steeper. Use the guide below as a reminder, then look at the soil. If a rut is already starting, you are already too far apart. Above about 20 percent, the same notebook says bars mostly clog or blow out. That is a reroute, steps, or a structure you can actually maintain — not another bar you hope will behave.\n\nWalk the outlet in your head during a hard rain. If the water has nowhere to go but back onto the trail, you built a puddle with extra steps.",
+    "illustrations": [
+      {
+        "type": "waterbar-plan",
+        "description": "Looking down on a trail. A bar set on an angle lets water slide off. A bar set square makes the water turn too hard.",
+        "alt": "Plan view of a trail with a water bar. One mode shows the bar at about 45 degrees with water leaving to the downhill side. The other shows a square bar.",
+        "caption": "Switch between 45° or steeper and Square bar. Watch whether the water still has a way off the tread."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Building a water bar and a drainage dip",
+        "url": "https://www.youtube.com/watch?v=l0glu7wKG80",
+        "duration": "3 min",
+        "watchFor": "They check the grade before they place anything, and the outlet is shaped as a fan so the water disperses instead of cutting a new gully."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "spacing",
+        "kind": "waterbar-spacing"
+      },
+      {
+        "id": "build-order",
+        "kind": "sequence",
+        "title": "Order that keeps the outlet open",
+        "steps": [
+          {
+            "title": "Read the grade",
+            "body": "Know how steep this piece is before you decide dip versus bar, and before you pick a spacing."
+          },
+          {
+            "title": "Mark the outlet first",
+            "body": "Find the downhill place that is already lower, and that will not dump onto a raw fill."
+          },
+          {
+            "title": "Set the bar on an angle",
+            "body": "About 45 degrees or steeper. Seat the upper end into the cut. If the bar is too short to do that, it is the wrong bar."
+          },
+          {
+            "title": "Shape the dip and keep the spoil out",
+            "body": "The bar is backup for a drain, not a wall. Do not leave the excavation in the outlet."
+          }
+        ]
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Crews installed thousands of bars and then came back to find them full of sediment or walked around. The failures clustered: the bar was square to the trail, it was too short to reach the cut bank at a real angle, or the outlet was blocked by the soil from the hole.",
+      "verified": "The Missoula Technology and Development Center wrote that pattern into the Trail Construction and Maintenance Notebook. Bars want at least about a 45-degree angle, more as grades approach 5 percent or soils get erodible. On 15 to 20 percent grades a shallow angle clogs. Above about 20 percent the notebook treats bars as mostly useless: they clog or they erode out. Spacing tables in crew handbooks are the same idea in numbers — shorter runs as the grade steepens — checked by whether a rut is forming, not by faith in the table.",
+      "wrong": "A square timber across the tread feels finished and acts like a speed bump. People step around it and braid a new path. Another miss is a perfect bar with the spoil still sitting in the outlet. Look after the next storm: sediment on the bar means the angle or the outlet is wrong.",
+      "decision": "This decides dip versus bar, and whether a steep pitch gets a bar at all. A 22 percent fall-line scramble does not need a heroic bar. It needs a different line, or a structure you will still be able to clean. On a moderate grade, it decides where you stop and drain before the rut has a chance to start."
+    },
+    "fieldChecks": [
+      {
+        "id": "angle",
+        "label": "The bar is about 45 degrees or steeper, not square across the tread."
+      },
+      {
+        "id": "anchored",
+        "label": "The upper end is seated into the cut bank, not floating in the middle of the path."
+      },
+      {
+        "id": "outlet-open",
+        "label": "The outlet is lower than the trail and is not plugged with spoil."
+      },
+      {
+        "id": "too-steep",
+        "label": "If this grade is near or above 20 percent, I have a reason this is not a water bar."
+      }
+    ],
+    "tryThis": {
+      "title": "Pace one grade",
+      "minutes": 10,
+      "steps": [
+        "Pick a stretch between two drains, or a stretch that has no drain yet.",
+        "Pace the length and estimate the grade. Flat as a road is near 2 percent. A pitch you feel in your calves is often past 10.",
+        "Compare the gap to the spacing guide. Write whether the outlet of the next drain is actually open."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "spot",
+        "figure": "waterbar-square",
+        "question": "What will this bar do in the first real rain?",
+        "options": [
+          "Stall the water and fill with sediment, or get walked around",
+          "Sheet water off gently because it is square and strong",
+          "Replace the need to look at the outlet",
+          "Work better the steeper the trail gets, with no upper limit"
+        ],
+        "answer": 0,
+        "explanation": "A square bar makes the water turn too sharply. It clogs, and on a steep grade it can blow out. Angle it."
+      },
+      {
+        "kind": "truefalse",
+        "question": "Above about 20 percent grade, a water bar is still the standard fix.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "The Forest Service notebook says bars on grades that steep mostly clog or erode away. Change the tool."
+      },
+      {
+        "kind": "choice",
+        "question": "Where does the soil from the excavation go?",
+        "options": [
+          "Anywhere but the outlet",
+          "Packed into the outlet so the water slows down",
+          "As a berm on the downhill edge of the whole trail",
+          "On top of the bar, the taller the better"
+        ],
+        "answer": 0,
+        "explanation": "The outlet is the device. Spoil in it turns the bar into a puddle."
+      }
+    ],
+    "resources": [
+      {
+        "title": "USFS notebook — why water bars fail",
+        "url": "https://www.fs.usda.gov/eng/pubs/htmlpubs/htm00232839/page07a.htm",
+        "note": "Angle, length, and the note that bars are mostly useless above about 20 percent."
+      }
+    ]
+  },
+  {
+    "id": "fence-posts-that-last",
+    "category": "Trails, Fences & Bridges",
+    "title": "Fence Posts That Last on Reserve Soil",
+    "level": "beginner",
+    "estimatedMinutes": 15,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "Wood fails at the ground line, where air and moisture meet.",
+      "About one third of the post goes in the ground. Under 2 feet is a wish.",
+      "Corners and ends need an H-brace. Line posts only hold height.",
+      "Say what the fence is for before you choose barbed wire."
+    ],
+    "content": "A fence is a pull, not a row of decorations. On reserve ground — dry chaparral, pockets of clay, a lot of rock — the failures are boring and repeatable. Plan for them before the first hole.\n\n## What you do\n\nIf the post is wood and it will be buried, the first place to design for is the ground line. That band stays damp and still gets air, which is what decay needs. The top can look sound while the soil line is a sponge. Use stock rated for ground contact, or a durable species you trust. Do not bury the heart of a scrap board.\n\nSteel does not rot there. It bends if you ask one post to hold a long tight pull, and it walks out of a shallow socket. In rock, a driven post sometimes seats better than a hole you cannot finish.\n\nDepth: about one third of the post in the ground, and deep enough that you cannot wag the top with one hand after it is tamped. For a typical line, that often means at least 2 feet of bury, more if the fence is tall, tight, or in soft soil. The helper below does that arithmetic. If rock stops you short, move the hole, drive steel, or change the brace. Do not declare victory at eight inches.\n\nTamp in thin layers. Floury dry soil will let the post lean after the first wet winter. Concrete is not automatically better. A collar that cups water against wood speeds rot. If you use it, crown it so water sheds off the post. Do not set posts in duff. Duff is mulch.\n\nLine posts keep the wire at height. Ends, corners, and gates take the pull. An H-brace turns that pull into a downward force on the end post: two posts, a rail in compression, a diagonal in tension. Stretch wire from brace to brace. A gate on a post that leans will drag, and someone will prop it with a rock.\n\nSay the purpose out loud. A vehicle edge, a work boundary, and a wish to stop deer are three different fences. If you do not need barbed wire, do not leave it as the default. Slack wire on the ground catches legs. Old wire leaves the field. It is not storage.\n\nSet one braced corner and a short run before you commit to the length. If that sample leans, the rest of the line will too.",
+    "illustrations": [
+      {
+        "type": "fence-brace",
+        "description": "An end post, a brace post, a horizontal rail, and a diagonal. Wire pull on the end post is carried down into the hole instead of laying the post over.",
+        "alt": "Diagram of an H-brace fence corner, with a toggle for an unbraced post that leans, and a highlighted band at the ground line.",
+        "caption": "Turn on the ground line and the load path. The diagonal should drive the end post down, not decorate the corner."
+      },
+      {
+        "type": "photo",
+        "src": "/field/fence-brace.jpg",
+        "description": "A wooden H-brace in chaparral: two posts, a rail, and a diagonal wire, with the fence continuing off one post.",
+        "alt": "Two round wooden posts with a horizontal log between them and a diagonal wire, standing in rocky soil with wire fence running to the right.",
+        "caption": "Find the rail and the diagonal. The rocks on the surface are not bury depth. The ground line, where the wood enters the soil, is where you inspect rot."
+      }
+    ],
+    "videos": [
+      {
+        "title": "H-brace load path",
+        "duration": "2 min",
+        "watchFor": "Which member is squeezed (the rail) and which is pulled (the diagonal), and whether the diagonal lands low on the post the wire is trying to tip."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "depth",
+        "kind": "fence-helper"
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Fence failures were inventoried by walking old lines, not by a single lab day. Wood posts snapped or crumbled in a band right at the soil surface. Unbraced corners leaned in the direction of the wire within a season. The pattern was so regular that ground-line rot and missing braces became the first two things a crew looked for.",
+      "verified": "Decay fungi need moisture and oxygen together. Those meet at the ground line, which is why ground-contact ratings and preservative tests focus there, and why a post can be solid at the top and gone at the soil. The brace is statics you can see: wire tension has to go into the ground. A diagonal from high on the brace post to low on the end post, with a rail between them in compression, turns the pull downward. If the top of an unbraced post moves, the geometry already predicted it.",
+      "wrong": "A shallow hole in rock, a concrete cup that holds water against wood, and a corner with no brace are the usual misses. Tug the top of a finished post. If it wags, the hole is not done. Probe the ground line of an old post before you trust the top.",
+      "decision": "This decides wood versus steel when you cannot get a real bury, and it decides whether a corner gets built before the wire is stretched. It also decides against barbed wire when the job is a trail edge or a work boundary. Leftover wire on a reserve is a wildlife injury, not a spare."
+    },
+    "fieldChecks": [
+      {
+        "id": "purpose",
+        "label": "I can say what this fence is for, in one sentence."
+      },
+      {
+        "id": "depth",
+        "label": "Bury is about one third of the post and at least about 2 feet, or I changed the plan."
+      },
+      {
+        "id": "brace",
+        "label": "Ends, corners, and the gate have a brace, not a single post."
+      },
+      {
+        "id": "ground-line",
+        "label": "I looked at the ground line, not only the top of the post."
+      }
+    ],
+    "tryThis": {
+      "title": "Test one existing post",
+      "minutes": 8,
+      "steps": [
+        "Find an older wood post on the reserve.",
+        "Look and probe at the ground line, then try to wag the top with one hand.",
+        "Write whether it is rot, a shallow set, or a missing brace — those are different repairs."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "Where do most wooden posts fail first?",
+        "options": [
+          "At the top, from sun",
+          "At the ground line, where moisture and air meet the wood",
+          "Only in the middle of a wire span",
+          "Only if you did not use concrete"
+        ],
+        "answer": 1,
+        "explanation": "Decay wants water and air at the same time. That happens in the band at the soil surface."
+      },
+      {
+        "kind": "spot",
+        "figure": "fence-lean",
+        "question": "What is missing from this post?",
+        "options": [
+          "A brace that can take the wire's pull",
+          "A coat of paint on the top",
+          "More wire tension",
+          "Mulch piled at the base"
+        ],
+        "answer": 0,
+        "explanation": "The lean is the pull with nowhere to go. An H-brace sends that force down into the hole."
+      },
+      {
+        "kind": "truefalse",
+        "question": "If rock stops the hole at eight inches, the honest move is to set the post anyway and call the fence finished.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "Move the hole, drive steel, or redesign the brace. A shallow set is not a foundation."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Ground-line rule",
+        "note": "When a wood post fails, look at the soil line first. Steel moves the problem to bending, loose anchors, and wire tension."
+      }
+    ]
+  },
+  {
+    "id": "reading-a-stream",
+    "category": "Trees, Plants & Rivers",
+    "title": "Reading a Stream: Flow, Banks, and Simple Crossings",
+    "level": "beginner",
+    "estimatedMinutes": 15,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "Read the channel on a calm day, then imagine it full to the top of the banks.",
+      "The outside of a bend takes the energy. The inside collects gravel.",
+      "A ford is only reasonable if the bed is firm, the water is shallow and clear, and the banks ease in.",
+      "Rising, muddy water with debris is a turn-around."
+    ],
+    "content": "You do not need instruments to learn a stream. You need a calm day and the honesty to turn around. This lesson is about looking. It is not permission to drive posts into a channel.\n\n## What you do\n\nStand back and find the channel: the groove the water carved, not just the wet line today. Bankfull is the flow that fills that groove before it spills onto a flatter floodplain. You can often see it as a break in slope, a line of debris, a change in plants, or stain on rock. Today's trickle may use a tenth of that shape. Any ford you bless, or any deck you imagine, has to make sense when the groove is full.\n\nA stable bank tends to have plants holding it, a toe that is not freshly collapsed, and no new vertical face of raw soil. Trouble looks like undercut trees, fresh slumps, and roots just exposed. The outside of a bend takes the energy. The inside collects gravel. A crossing on the outside of a bend fights the stream.\n\nA ford — walking on the bed — is reasonable only when the bed is firm, the water is shallow and slow, you can see the bottom, and the way in and out is gentle. If any of those fail, do not \"improve\" it with a wish. Steep banks, a soft bed, or a path people will use in the rainy months are reasons to keep them out of the water.\n\nA short bridge or a boardwalk takes feet off a soft bed. Both are still wrong if the deck sits in the debris path and becomes a dam. If you cannot find the high-water mark, you are not ready to set a height.\n\nWater that is rising, brown, or carrying sticks is not a test of nerve. You do not send one person in to \"check.\" Turn around. Come back and read what the storm wrote.\n\nThe moment you want posts or a stringer on a bank, stop and find out whether the work needs a permit. In California that can include Fish and Wildlife and a regional water board. A cultural site makes the pause longer, not optional.",
+    "illustrations": [
+      {
+        "type": "stream-channel",
+        "description": "A slice across a small creek: a raw cut bank on one side, a gravel bar on the other, and a water line that can sit low or fill the groove.",
+        "alt": "Stream cross-section with a vertical cut bank, a gravel bar, and a toggle between calm-day water and bankfull flow.",
+        "caption": "Switch on Bankfull. The debris and the break in slope are the stream's record of a height you did not see today."
+      },
+      {
+        "type": "photo",
+        "src": "/field/stream-bank.jpg",
+        "description": "A raw vertical bank with roots exposed, clear water, and a gravel bar on the inside of the bend.",
+        "alt": "A creek with a freshly cut soil bank and hanging roots on the right, and a gravel bar on the left.",
+        "caption": "The raw face is the cut bank — energy lives there. The gravel is the bar, where the stream drops what it carried. Do not put a permanent walk on the lip of that cut."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Bankfull, in the field",
+        "duration": "2 min",
+        "watchFor": "Someone pointing at a debris line or a break in slope above today's water, not at the pretty trickle in the middle."
+      }
+    ],
+    "interactiveElements": [],
+    "howWeKnow": {
+      "discovered": "People who lived on rivers already knew the outside of a bend ate its bank and the inside grew a bar. Surveyors in the twentieth century, including the river studies associated with Luna Leopold, measured the same habit and gave the full groove a name: bankfull, the flow that does most of the shaping, not the rare flood and not today's trickle.",
+      "verified": "You can check it without their instruments. A break in slope, a debris line, stain on rock, and a change in plants line up with the top of the channel on a surprising number of streams. Repeat the look after a storm. If the debris moved up into the shrubs, your calm-day sketch was low. Crossing design and trail location that ignore that line fail in ordinary wet winters, which is the field verification.",
+      "wrong": "Judging a ford from a June photo, building on the raw outside bank because the walk is shorter, and sending someone into rising muddy water to 'feel the bottom.' If you cannot see the bed, you cannot know the holes, the wire, or the wood that lets water through and pins a person.",
+      "decision": "This decides ford versus 'keep people out,' and it decides whether a trail stays off the lip of an incising bank. It also decides the day you turn around. A deck elevation you cannot tie to a debris line is a guess, and a low deck in the channel becomes a dam when the first tree comes down."
+    },
+    "fieldChecks": [
+      {
+        "id": "bankfull",
+        "label": "I can point to a debris line, stain, or break in slope above today's water."
+      },
+      {
+        "id": "bend",
+        "label": "I know which bank is the outside of the bend, and I am not putting a walk on that lip."
+      },
+      {
+        "id": "ford-rules",
+        "label": "If I am calling it a ford: firm bed, shallow clear water, gentle banks. Otherwise I am not."
+      },
+      {
+        "id": "turn-around",
+        "label": "Rising, muddy, or debris-filled water means I turn around. I do not send a tester."
+      }
+    ],
+    "tryThis": {
+      "title": "Mark one debris line",
+      "minutes": 10,
+      "steps": [
+        "On a calm day, find a bend you can see without climbing a raw bank.",
+        "Point to today's water, then to the highest debris or stain you trust.",
+        "Write which side is cutting, and whether a ford would still make sense in January."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "When is a ford reasonable for someone on foot?",
+        "options": [
+          "Whenever the water looks calm in a photo",
+          "When the bed is firm, the water is shallow and slow, you can see the bottom, and the banks ease in and out",
+          "While a storm is building, if you hurry",
+          "When the banks are fresh, raw, and vertical"
+        ],
+        "answer": 1,
+        "explanation": "All of those conditions have to be true. A pretty surface is not one of them."
+      },
+      {
+        "kind": "spot",
+        "figure": "stream-cut",
+        "question": "The groove is full. Where is the energy?",
+        "options": [
+          "On the raw cut bank",
+          "On the gravel bar, which is why you build there",
+          "Only in the center of today's trickle",
+          "Nowhere, once the water looks brown"
+        ],
+        "answer": 0,
+        "explanation": "The outside bank is being cut. A gravel bar is deposition. Do not confuse the two."
+      },
+      {
+        "kind": "order",
+        "question": "Put a careful crossing decision in order.",
+        "options": [
+          "Read the channel on a calm day, including the debris line",
+          "Decide whether a ford meets every condition, not just one",
+          "If it does not, keep feet out of the bed",
+          "If you still want a structure, stop and check permits before any post"
+        ],
+        "explanation": "Looking is the work. Building is a later, permitted decision. Rising water is not a step in this list — that is a turn-around."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Permits before posts in the channel",
+        "note": "Looking costs nothing. Bank and channel work in California can involve Fish and Wildlife and a regional water board. This lesson is observation, not permission."
+      }
+    ]
+  },
+  {
+    "id": "root-zone-leave-it",
+    "category": "Trees, Plants & Rivers",
+    "title": "Leave the Root Zone Alone",
+    "level": "beginner",
+    "estimatedMinutes": 12,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "Fine roots that feed the tree reach about as far as the canopy, not a tight circle at the trunk.",
+      "Compaction squeezes out air. Roots need that air.",
+      "Duff is the tree's mulch. Do not 'clean' it off to make the ground look finished.",
+      "Damage shows up later in the crown, which is why the trunk is a bad report card."
+    ],
+    "content": "Before you stack lumber, park a cart, or 'tidy' under a tree, look at the ground the tree is actually using.\n\n## What you do\n\nThe drip line — the edge of the canopy — is a fair first sketch of the root zone. A lot of the fine roots that take up water and nutrients are out there, near the surface, not in a neat ball under the trunk. Digging, trenching, or a new bench cut through that zone is root loss even if you never touch the trunk.\n\nCompaction is the quieter injury. Boots, a wheelbarrow path, and a stack of posts squeeze the air out of the soil. Roots and the life around them need those pores. Once a dry chaparral soil packs, it does not fluff back because you stopped for a week. Move the staging out past the canopy. If the work has to cross the zone, one defined path beats a general smear of traffic.\n\nLeave the duff. Leaf litter feeds the soil and keeps the surface from sealing. Raking a coast live oak to bare ground so it looks maintained is a cut, not a cleanup. The photo on this lesson is the comparison: duff on one side, packed bare soil and roots showing on the other.\n\nDo not pile soil against the trunk, and do not cut a grade that buries the root flare. Added soil over roots can smother them the same way compaction does, just with dirt instead of boots.\n\nIf a trail wants to pass a tree, let it pass outside the drip line when you have the choice. When you do not, the decision is a narrow hardened line and no equipment parking, not a wider social area in the shade.",
+    "illustrations": [
+      {
+        "type": "root-zone",
+        "description": "A tree in slice view. Roots run out toward the drip line. One side still has duff. The other can be shown packed hard.",
+        "alt": "Diagram of a tree with roots extending to the canopy edge, and a toggle that shows compacted soil.",
+        "caption": "Turn on roots, then compaction. The trunk is the wrong place to judge whether the tree still has air in its soil."
+      },
+      {
+        "type": "photo",
+        "src": "/field/root-zone.jpg",
+        "description": "Under an oak, intact leaf litter on one side and bare, packed soil with woody roots showing on the other.",
+        "alt": "Forest floor split between a thick layer of oak leaves and a compacted bare patch with surface roots.",
+        "caption": "The leaves are the healthy surface. The bare side is traffic. Those roots should not be your path."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Root zone in one walk-around",
+        "duration": "2 min",
+        "watchFor": "The person standing at the drip line, not hugging the trunk, and a shot of packed soil next to duff."
+      }
+    ],
+    "interactiveElements": [],
+    "howWeKnow": {
+      "discovered": "Arborists and foresters kept finding trees decline years after nearby grading, fill, or a new path, with the trunk untouched. Digs showed the feeding roots were wide and shallow. The canopy width became the field sketch of that system because it matched where the roots actually were on a great many trees.",
+      "verified": "Root excavations and later soil-air measurements keep showing the same two facts. Fine roots are concentrated near the surface and well beyond the trunk. Compacted soil loses the pores that hold air and let water in, and root growth drops off in that ground. You can verify it on a reserve without a lab: a knife goes into duff and loose soil, and stops on the packed path. The crown thinning that follows is delayed, which is why 'it still looks fine' is not a check.",
+      "wrong": "Tidying the leaves, stacking materials in the shade, and trenching 'just a narrow line' from the trunk to the drip line. Another miss is judging health by the bark. Look at the soil surface and at next year's leaves.",
+      "decision": "This decides where a work pile sits, and whether a trail bend moves outside the canopy. It also decides against using a tree's shade as the lunch spot for a crew with carts. One hardened crossing is a decision. A season of wandering boots is an accident."
+    },
+    "fieldChecks": [
+      {
+        "id": "drip",
+        "label": "I can stand at the drip line and see it as root zone, not as empty ground."
+      },
+      {
+        "id": "duff",
+        "label": "I am not raking duff off to make the work look finished."
+      },
+      {
+        "id": "pile",
+        "label": "Posts, spoil, and carts are outside the canopy, or on one defined path."
+      },
+      {
+        "id": "flare",
+        "label": "I am not piling soil against the trunk or burying the root flare."
+      }
+    ],
+    "tryThis": {
+      "title": "Compare two surfaces under one tree",
+      "minutes": 8,
+      "steps": [
+        "Pick a tree you work near. Find duff and find a worn spot.",
+        "Press a knife or a stick into each. Notice which one stops you.",
+        "Write where the next pile of posts should sit instead."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "spot",
+        "figure": "root-packed",
+        "question": "What is the injury in the packed patch?",
+        "options": [
+          "Air has been squeezed out of the soil where fine roots feed",
+          "The trunk was painted",
+          "The canopy is too wide",
+          "Duff is stealing water from the roots"
+        ],
+        "answer": 0,
+        "explanation": "Compaction closes the pores. The roots are still there, and they are short of air."
+      },
+      {
+        "kind": "truefalse",
+        "question": "Raking leaves away under an oak is routine maintenance and does not change the tree.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "Duff is mulch and food. Bare packed soil is a different, worse surface."
+      },
+      {
+        "kind": "choice",
+        "question": "Where is a fair first boundary for the root zone?",
+        "options": [
+          "About the drip line of the canopy",
+          "One foot from the bark",
+          "Wherever the shade feels nice at noon",
+          "Only the roots you can see above ground"
+        ],
+        "answer": 0,
+        "explanation": "Feeding roots commonly run out near the edge of the canopy, close to the surface."
+      }
+    ],
+    "resources": [
+      {
+        "title": "A knife is enough for this check",
+        "note": "If the blade enters the duff and stops dead on the path, you have found compaction. You do not need a penetrometer to move the pile."
+      }
+    ]
+  },
+  {
+    "id": "short-span-you-can-explain",
+    "category": "Civil & Structural Basics",
+    "title": "A Short Span You Can Explain",
+    "level": "intermediate",
+    "estimatedMinutes": 14,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "The deck is not the beam. The stringers carry the people to the banks.",
+      "Each end needs something that will not wash. A sill in the channel is debris.",
+      "If you cannot find high water, you cannot set the height.",
+      "Water, a roof, or the public are reasons to stop and get a real design."
+    ],
+    "content": "A short footbridge is still a beam. If you cannot say where the weight goes, you are not ready to build it.\n\n## What you do\n\nPeople stand on the deck. The deck boards pass that weight to the stringers. The stringers span the gap and deliver the weight to the two banks. Those banks, or the sills on them, are the abutments. If an abutment is a rock you hope stays put, say that out loud before you call it a foundation.\n\nKeep the structure out of the channel's way. A deck in the path of high water catches trees and then fails sideways, often taking the bank with it. Find the debris line before you pick a height. No debris line, no height.\n\nThe footing under each end follows the same habit as a post: bottom on firm material, not duff, wide enough to compact around, crowned so water leaves. If you can rock it by hand, it is not done. In this climate the frost line is not your main enemy. Loose fill and water at the toe are.\n\nStop when the span crosses a real stream in a way that needs posts in the bank, when it carries a roof, or when the public will rely on it. This lesson is the vocabulary and the refusal. It is not a stamp. Write down the span, what the stringers are, and where high water sits. If any of those three sentences fail, the next call is to someone who designs this, not to the hardware store.\n\nA boardwalk on wet ground is the same idea laid flat: keep feet off the soil, and do not let the frame become a dam.",
+    "illustrations": [
+      {
+        "type": "span-load",
+        "description": "A short beam between two banks. Arrows show weight moving from the deck into the stringer and down into the abutments. High water can be drawn up into the span.",
+        "alt": "Diagram of a short footbridge with the load path from the deck into the banks, and a toggle for high water.",
+        "caption": "Turn on the load path, then high water. If the water reaches the deck, the span is in the flood, not over it."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Load path on a short footbridge",
+        "duration": "2 min",
+        "watchFor": "The difference between deck boards and the members that actually span, and a look underneath at what the ends sit on."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "three-sentences",
+        "kind": "before-after",
+        "title": "Can you say it?",
+        "steps": [
+          {
+            "title": "Not yet",
+            "body": "“We’ll put some boards across.” That sentence has no span, no member that carries it, and no high water. Do not buy lumber on it."
+          },
+          {
+            "title": "Enough to pause correctly",
+            "body": "“Eight feet, two stringers bearing on firm ground above the debris line, deck only passes the weight down. If any of that is wrong, I stop.” That is a decision. It may still need a designer. It is no longer a wish."
+          }
+        ]
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Builders learned spans by watching which members broke. Deck boards failed locally. The long members failed when the ends were soft or the middle had nothing under it. Putting a timber in a creek and calling it a bridge failed a different way: debris stacked on it and the whole thing rotated out. The vocabulary — deck, stringer, abutment — is just names for those observed jobs.",
+      "verified": "Statics has not changed on this point. A load on a simple span has to reach the supports. You can verify a small model with two supports and a board: press the middle and watch the ends try to lift or crush. Field verification is uglier and well documented in trail bridge failures: low decks become dams, undersized stringers sag, and abutments on fill wash at the toe. Standards for public trail bridges exist because those failures got people hurt. This app does not replace them.",
+      "wrong": "Sizing by what is on the truck, setting the ends in the channel because the span gets shorter, and skipping high water because the day you build is sunny. Another miss is a beautiful deck on stringers that do not actually bear on anything solid.",
+      "decision": "This decides whether a wet crossing is a few stepping stones you can live with, a span you can explain, or a stop. If the public will use it, or the banks are the stream's banks, the decision is to get a qualified design. Knowing the load path is how you notice you are past your lesson."
+    },
+    "fieldChecks": [
+      {
+        "id": "sentences",
+        "label": "I can say the span, what carries it, and where high water is."
+      },
+      {
+        "id": "bearing",
+        "label": "Both ends sit on firm material above the debris line, not in the channel."
+      },
+      {
+        "id": "deck-is-not-beam",
+        "label": "I am not asking deck boards to be the beam."
+      },
+      {
+        "id": "stop",
+        "label": "If the public, a roof, or posts in the bank are involved, I have stopped for a real design."
+      }
+    ],
+    "tryThis": {
+      "title": "Explain one crossing out loud",
+      "minutes": 8,
+      "steps": [
+        "Stand at a crossing you already have, even a culvert or a few rocks.",
+        "Say where a person's weight goes, and where debris would stack in a high flow.",
+        "Write the sentence that fails. That is the repair, or the reason to leave it alone."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "What carries people across the gap?",
+        "options": [
+          "The stringers, out to the abutments",
+          "The deck boards, by themselves",
+          "The water, if it is shallow",
+          "A coat of paint and a hope"
+        ],
+        "answer": 0,
+        "explanation": "The deck only hands the weight to the members that span. Those members have to reach real supports."
+      },
+      {
+        "kind": "truefalse",
+        "question": "A shorter span is always safer, so setting the ends down in the channel is a good trade.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "You shortened the beam and built a debris catch. High water will find it."
+      },
+      {
+        "kind": "order",
+        "question": "Put the decision in order.",
+        "options": [
+          "Find the debris line or other high-water mark",
+          "Say what member spans, and what it bears on",
+          "Keep that bearing above the water and on firm ground",
+          "Stop and get a design if the public or the channel banks are involved"
+        ],
+        "explanation": "Height without a mark is a guess. A mark without a member is still a guess. The stop is part of the sequence, not a failure."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Where this lesson stops",
+        "note": "Vocabulary and a refusal. Public trail bridges and anything in a channel need a qualified design and, often, a permit."
+      }
+    ]
+  },
+  {
+    "id": "solar-battery-remote",
+    "category": "Electrical, Solar & Batteries",
+    "title": "Solar + Battery Basics for Remote Work Sites",
+    "level": "intermediate",
+    "estimatedMinutes": 16,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "A panel in daylight can be live. Do not short the leads to test it.",
+      "Fuse the positive lead close to the battery.",
+      "Shade hurts more than a slightly wrong tilt.",
+      "Prefer 12-volt loads. This kit is not a shop inverter."
+    ],
+    "content": "This is a portable kit for lights, a phone, a radio — power that lets you work away from the truck. It is not building wiring. A cabin, a subpanel, or anything tied to a structure or the grid is an electrician's job.\n\n## What you do\n\nTreat a panel in daylight as live. Cover it while you land wires. Do not test it by shorting the leads. That spark is a weld.\n\nPolarity matters. Reverse polarity can destroy a controller in a moment. Check twice.\n\nFuse the positive conductor close to the battery. If a wire chafes, the fuse should open before the wire becomes the fuse. An unfused battery can dump a frightening current through a thin lead. Take metal rings off. A ring across a terminal is a classic burn.\n\nMatch the controller's charge profile to the chemistry. Lithium iron phosphate (LiFePO4) is not lead-acid with a different label. Do not charge lithium below freezing. You plate the cells and quietly ruin them. Lead-acid, if you use it, needs ventilation. Charging it releases hydrogen.\n\nIn southern California a fixed panel wants to look generally south. Tilt somewhere around latitude — low thirties — is a fair all-year compromise. You do not need a perfect angle. Shade matters more. Full sun at a mediocre tilt beats a perfect tilt under an oak. Dust is shade you can wipe off. Do that before you buy a second panel.\n\nA PWM controller is a sturdy switch, fair when a \"12-volt\" panel feeds a 12-volt battery and the kit is small. MPPT earns its cost when the panel voltage is much higher than the battery. It does not fix shade, and it does not make a tiny panel run a saw.\n\nLiFePO4 costs more, weighs less, and lets you use most of the nameplate. Lead-acid that you want to keep gives you about half of its rating, and it hates sitting empty.\n\nSizing, on a tailgate: two 10-watt lights for four hours is 80 watt-hours. A phone and a radio, call it another 20. About 100 watt-hours a day. Plan on waste and a dim day, something nearer 200 you can actually use. A 12-volt, 20 amp-hour LiFePO4 stores about 240 watt-hours and can use most of it. Lead-acid, using half, wants on the order of 40 amp-hours for a similar usable pile. A 50- to 100-watt panel is a sane start for lights. It is not a plan for a heater.\n\nWrite the loads down before you buy. Watts times hours is the whole starting formula. Then walk the decision tree on this page before you trust the kit with a tool.",
+    "illustrations": [
+      {
+        "type": "solar-flow",
+        "description": "Panel, controller, fuse, battery, and a 12-volt load, in that order. A second view shows an unfused short around the protection.",
+        "alt": "Block diagram of a small solar kit with a fused path, and a toggle that shows a dashed short across the battery.",
+        "caption": "Tap each block. Then show the short. The fuse only helps if it is on the positive lead, close to the battery."
+      },
+      {
+        "type": "photo",
+        "src": "/field/solar-kit.jpg",
+        "description": "A single panel on a stand in chaparral, tilted toward the sun, with a closed box and a cable on the gravel.",
+        "alt": "A tilted solar panel on a metal stand beside a metal battery box, with a cable lying across rocky ground.",
+        "caption": "The tilt is in the right family. The cable on the ground is the thing to fix before it chafes. Shade from the brush will matter more than a few degrees of angle."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Fuse, polarity, and what not to plug in",
+        "duration": "3 min",
+        "watchFor": "The fuse next to the battery, a finger tracing positive and negative, and a plain statement that this is not an inverter for shop tools."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "fit",
+        "kind": "solar-decision"
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Early solar kits were a panel wired hopefully to a battery. People learned the failures directly: reversed leads killed equipment, an unfused short melted wire, and batteries boiled or died young when the voltage was wrong. Charge controllers started as simple switches that stopped the panel from overcharging, then pulse-width designs, then maximum-power-point trackers that convert extra panel voltage into current.",
+      "verified": "Panel output under shade is measured, not argued: a shadowed cell can collapse the string far more than a ten-degree tilt error. Battery makers publish charge voltages because the chemistries are different, and lithium makers warn that charging below freezing plates metal on the anode — a failure you can verify by a battery that will no longer hold what it used to. Watt-hours are just watts times hours. If the loads are not listed, there is nothing to verify.",
+      "wrong": "Shorting the leads for a spark test, copying a lead-acid setting onto LiFePO4, leaving lithium on charge in a freeze, and buying an inverter so someone can plug in a saw. Another miss is a second panel while the first one sits in shade or under dust.",
+      "decision": "This decides whether the kit is for lights or whether the tool stays on the truck. It decides where the panel stands — sun first, tilt second — and whether a cold night means you disconnect the lithium. A remote gate opener or a work light can be a yes. A building is not this lesson."
+    },
+    "fieldChecks": [
+      {
+        "id": "live",
+        "label": "I treat the panel as live in daylight, and I am not shorting the leads."
+      },
+      {
+        "id": "fuse",
+        "label": "The positive lead is fused close to the battery."
+      },
+      {
+        "id": "chemistry",
+        "label": "The controller profile matches the battery, and lithium will not charge below freezing."
+      },
+      {
+        "id": "loads",
+        "label": "I wrote watts times hours. The loads are lights, a phone, a radio — not a saw."
+      }
+    ],
+    "tryThis": {
+      "title": "List one real day of loads",
+      "minutes": 10,
+      "steps": [
+        "Write every thing you would run at the work site, with watts and hours.",
+        "Multiply. That number is the day.",
+        "Stand where the panel would go at the hour you care about and see if the sun is actually there."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "spot",
+        "figure": "solar-short",
+        "question": "What is wrong with the dashed path?",
+        "options": [
+          "A short can dump the battery through a wire, with nothing that opens first",
+          "The panel is tilted, which wastes power",
+          "The load is 12 volts, which is unsafe by definition",
+          "PWM controllers require this path"
+        ],
+        "answer": 0,
+        "explanation": "The fuse exists so the wire does not have to be the fuse. A bare short skips that."
+      },
+      {
+        "kind": "truefalse",
+        "question": "A perfect tilt under an oak beats a rough tilt in full sun.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "Shade collapses output more than a modest tilt error. Move the panel."
+      },
+      {
+        "kind": "choice",
+        "question": "Why does lead-acid need more nameplate capacity than LiFePO4 for the same night of lights?",
+        "options": [
+          "You should only use about half of a lead-acid battery if you want it to last",
+          "Lead-acid is lighter, so you buy more of it",
+          "PWM controllers refuse lead-acid",
+          "Lead-acid must be tilted at latitude"
+        ],
+        "answer": 0,
+        "explanation": "The usable pile is about half the sticker if you want the battery to survive. LiFePO4 lets you use most of the name."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Controller manual and the battery sheet",
+        "note": "Match the charge profile to the chemistry. Do not charge lithium below freezing. This lesson stops at a portable kit."
+      }
+    ]
+  },
+  {
+    "id": "one-offer-focus",
+    "category": "Business for Raven Flock",
+    "title": "One-Offer Focus: Turning Skills into a Clear Service",
+    "level": "beginner",
+    "estimatedMinutes": 12,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "One offer means they know what they are buying and you know when you are done.",
+      "An assessment is a product: a visit, a short note, a few options.",
+      "Say the price before the visit. Do not invent a discount out loud.",
+      "The build is a second yes."
+    ],
+    "content": "Raven Flock gets trusted by being clear, not by listing every skill on the first call. You already know how to see a trail, a fence, a wet bank. The business problem is smaller than it feels: package one job a neighbor or a land manager can say yes to.\n\n## What you do\n\nHere is a complete offer. **Reserve trail or fence assessment.** You come for a defined visit, about half a day. You walk the segment they named. They get a short written note: what is failing, what can wait, what is unsafe to leave, and two or three options with an honest range. You do not start construction that day unless a separate scope was already a yes.\n\nThat is a product. It has an edge. You can tell when it is done.\n\n\"Handyman, trails, fences, solar, and websites\" is your life. It is not an offer. A client cannot picture the Tuesday, and you cannot tell a good job from a long one.\n\nDo not add the build into the same paragraph. If they want the work built, that is a second offer, after they have read the note. Some will not. That is a finished assessment, not a lost sale.\n\nCharge for the decision you hand them. Write the number down before you call. People invent discounts when the other person goes quiet. A fair price is part of the care.\n\nKeep the message short enough for a phone. One paragraph on what they get. One price. One next step. After the visit, the note arrives when you said it would. If you do not know, say you do not know. Then stop talking.\n\nUse the check on this page before you send anything. If it still needs an \"and,\" it is probably two offers.",
+    "illustrations": [
+      {
+        "type": "offer-card",
+        "description": "Two versions of the same phone message. One is a list of every skill. One is a half-day visit, a note, and a price.",
+        "alt": "A described comparison of a foggy service list and a single clear assessment offer.",
+        "caption": "If the message needs a menu, it is not one offer yet. Read it aloud and cut anything that is a different job."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Say the offer once",
+        "duration": "1 min",
+        "watchFor": "A person reading one paragraph and then stopping. No tour of every skill they have."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "clear",
+        "kind": "offer-check"
+      },
+      {
+        "id": "fog-versus-clear",
+        "kind": "before-after",
+        "title": "The same skill, two messages",
+        "steps": [
+          {
+            "title": "Fog",
+            "body": "“I do trails, fences, brush, solar, and I can look at the whole place and we’ll figure it out.” Nobody knows what Tuesday costs, or when you are done."
+          },
+          {
+            "title": "One offer",
+            "body": "“Half a day on the stretch you name. You get a short note: what’s failing, what can wait, and two or three options. The visit is $X. Building it is a separate yes.”"
+          }
+        ]
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "Small firms learned this by accident, the expensive way. A first call that listed every skill turned into an unbounded visit. The visit turned into unpaid advice. The advice turned into a job nobody had priced. The ones that stayed solvent started selling a finished thing: a defined visit and a piece of paper.",
+      "verified": "You can check an offer without a marketing department. Read it to someone who does not do the work. If they can say what they would get, what they would pay, and how they would know it was done, the offer is clear. If they ask “and what else?”, it is still a list. Repeat that test on the next three real inquiries. Adjust the price after several real visits, not after imaginary ones.",
+      "wrong": "Discounting out loud when the line goes quiet, adding the build into the assessment so you do not lose the sale, and writing a twelve-page proposal when a page would do. Photos without sentences are the same miss: a gallery is not a recommendation.",
+      "decision": "This decides what you say on the first call about a reserve trail or fence, and what you refuse to start the same day. It decides that a finished assessment with a no is a completed job. The build can wait for its own yes."
+    },
+    "fieldChecks": [
+      {
+        "id": "one-breath",
+        "label": "I can say the offer in one breath, including what is not included."
+      },
+      {
+        "id": "price",
+        "label": "The price is a number I wrote down before the call."
+      },
+      {
+        "id": "done",
+        "label": "I know what finished looks like. It is a note, not a construction site."
+      },
+      {
+        "id": "second-yes",
+        "label": "The build is a separate yes after they have the note."
+      }
+    ],
+    "tryThis": {
+      "title": "Read it to one person",
+      "minutes": 10,
+      "steps": [
+        "Write the offer in one sentence with a price.",
+        "Read it to someone who does not do the work. Do not explain further.",
+        "Write down the question they ask. If it is “what do I actually get?”, the sentence is not done."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "What is the point of selling one offer?",
+        "options": [
+          "To hide the skills you have",
+          "So a client knows what they are buying, and you know when the job is finished",
+          "To list every trade on the first call",
+          "To avoid putting anything in writing"
+        ],
+        "answer": 1,
+        "explanation": "A finished edge is the product. A list of skills has no edge."
+      },
+      {
+        "kind": "truefalse",
+        "question": "If they go quiet, the helpful move is to invent a discount.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "Write the number before the call. Silence is not a cue to shrink the work."
+      },
+      {
+        "kind": "order",
+        "question": "Put a clean first job in order.",
+        "options": [
+          "Say what they get, the price, and when it is done",
+          "Do only that visit",
+          "Send the note when you said you would",
+          "Talk about building only if they still want you after the note"
+        ],
+        "explanation": "The build is last because it is a different yes. Folding it into step one is how the offer goes foggy."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Write the offer in one paragraph",
+        "note": "If it needs a menu, it is not one offer yet. Read it aloud. Cut anything that is a different job."
+      }
+    ]
+  },
+  {
+    "id": "first-useful-script",
+    "category": "Coding for Apps & Tools",
+    "title": "Your First Useful Script or Mini-Tool",
+    "level": "beginner",
+    "estimatedMinutes": 12,
+    "addedBy": "initial",
+    "dateAdded": "2026-10-23",
+    "keyPoints": [
+      "A tool you will open on a workday beats an app you have to become a company to finish.",
+      "Write inputs, output, where it runs, and what done means before you ask for code.",
+      "A trail log or a post count is enough. It does not need an account.",
+      "When it works, teach it with a lesson pasted into Import."
+    ],
+    "content": "You do not need a big app. You need a thing you will actually open on a Tuesday when the light is going and you are trying to remember the north run.\n\n## What you do\n\nA big app hides the useful part behind accounts, settings, and a design you will keep sanding. A small tool answers one question and gets out of the way.\n\nTwo tools fit this work. A trail log with the same four fields every visit: date, segment, what you did, what to watch next time. The form on this page is that tool. Consistency is the point. A database is not required to start.\n\nA fence-post count is the other one. Length, spacing, height above ground. Out come bury depth and how many posts. You can do it once on paper so you trust the arithmetic. The fence lesson already has that helper. You do not need a second app to repeat it.\n\nNeither tool needs a login. If it needs a signal, it will fail on the day you needed it. Say that in the spec: it has to work on the phone, offline, after the page has loaded once.\n\nBefore you ask a bot for code, write four lines. What goes in. What comes out. Where it has to run. What done means — you can use it on the next work day without help. Refuse the extra screens. When the bot shows you something larger than the four lines, send it back.\n\nWhen the tool works, write the lesson the way you would coach the next steward. Paste it into Import on this app as JSON. You do not rebuild the library to add what you just learned. The preferred shape is on the Import page: practical how, how we know, a field check, and a plate or a small interactive if it earns one.\n\nStart with the log. Ship that. The next tool can wait until this one has survived a real work day.",
+    "illustrations": [
+      {
+        "type": "four-lines",
+        "description": "A card with four lines only: what goes in, what comes out, where it runs, what done means. No login, no feed, no map of the county.",
+        "alt": "A described spec card with four fields for a small field tool, and nothing else.",
+        "caption": "If the spec needs a fifth box for accounts or a community, it is already too big for the first version."
+      }
+    ],
+    "videos": [
+      {
+        "title": "Four lines before any code",
+        "duration": "2 min",
+        "watchFor": "The spec staying smaller than the demo. If the demo grows a login, the spec was ignored."
+      }
+    ],
+    "interactiveElements": [
+      {
+        "id": "log",
+        "kind": "trail-log"
+      }
+    ],
+    "howWeKnow": {
+      "discovered": "People who build tools for their own work kept noticing the same wreck: the ambitious app was unfinished on the day it was needed, and the paper note with four consistent lines was the thing that actually held the record. The small script won because it shipped.",
+      "verified": "You verify a field tool by using it, not by describing it. The check is blunt. Did you open it on a work day without a signal, and did it answer the one question? If you have to ask someone for help to use your own tool, it is not done. If you have not opened it in a month, it was a costume. A second check is whether a bot-built lesson about the tool imports into this app without a rewrite of the whole library. That is the Import page doing its job.",
+      "wrong": "Starting with accounts, a map of the whole reserve, and a visual theme. Adding features before the four-line version has survived a Tuesday. Trusting a bot's larger design because it looks finished. You are the person who knows the job.",
+      "decision": "This decides the next thing you ask a bot to build: a log or a count, offline, on the phone. It decides against a new brand for every script. When the log has survived a work day, the decision to teach it is a lesson pasted into Import, not a new platform."
+    },
+    "fieldChecks": [
+      {
+        "id": "four-lines",
+        "label": "I wrote inputs, output, where it runs, and what done means."
+      },
+      {
+        "id": "offline",
+        "label": "It has to work on the phone after one load, with no account."
+      },
+      {
+        "id": "one-question",
+        "label": "It answers one field question. I sent back the extra screens."
+      },
+      {
+        "id": "used",
+        "label": "I will know it is real when I open it on a work day without help."
+      }
+    ],
+    "tryThis": {
+      "title": "Keep one real entry",
+      "minutes": 8,
+      "steps": [
+        "Use the log on this page for a stretch you actually walked.",
+        "Keep the entry. It lands in the notes under this prompt.",
+        "Tomorrow, see if that one line is enough to remember the job. If it is, the tool is the right size."
+      ]
+    },
+    "quiz": [
+      {
+        "kind": "choice",
+        "question": "What should you build first?",
+        "options": [
+          "An app with accounts and a dozen features",
+          "A small tool that answers one field question",
+          "A new brand for every script",
+          "Nothing, until the tool can run the whole reserve"
+        ],
+        "answer": 1,
+        "explanation": "The useful part is the question it answers on a work day. Everything else can wait until that exists."
+      },
+      {
+        "kind": "order",
+        "question": "Put the build in order.",
+        "options": [
+          "Write inputs, output, where it runs, and what done means",
+          "Ask for the smallest version of those four lines",
+          "Use it on a real work day",
+          "Teach it with a lesson pasted into Import"
+        ],
+        "explanation": "Code before the four lines is how you get a costume. The lesson comes after the tool has survived contact with the work."
+      },
+      {
+        "kind": "truefalse",
+        "question": "A tool that needs a signal is fine, as long as the design looks finished.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "The day you need it is often the day the signal is gone. Offline after one load is part of done."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Import, for the lesson about the tool",
+        "note": "Same fields as this library. Practical how, how we know, a field check. Do not rename them."
+      }
+    ]
+  }
+]

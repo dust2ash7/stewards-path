@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Steward's Path — dusk chaparral field notebook.
+   Tokens live here. Theme toggle swaps the --sp-* variables. */
+@theme inline {
+  --color-canvas: var(--sp-canvas);
+  --color-surface: var(--sp-surface);
+  --color-elevated: var(--sp-elevated);
+  --color-ink: var(--sp-ink);
+  --color-muted: var(--sp-muted);
+  --color-line: var(--sp-line);
+  --color-brass: var(--sp-brass);
+  --color-brass-ink: var(--sp-brass-ink);
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-display: "Newsreader", "Iowan Old Style", Palatino, Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+  --sp-canvas: #111613;
+  --sp-surface: #1b231e;
+  --sp-elevated: #24302a;
+  --sp-ink: #f4efe6;
+  --sp-muted: #a7afa3;
+  --sp-line: #334038;
+  --sp-brass: #d4a24a;
+  --sp-brass-ink: #1c1408;
+  --sp-soil: #4a3b2a;
+  --sp-water: #9ec4d4;
+  --sp-leaf: #7d9a78;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --sp-canvas: #f3eee4;
+  --sp-surface: #fffcf7;
+  --sp-elevated: #e7e0d2;
+  --sp-ink: #1a211c;
+  --sp-muted: #3e493f;
+  --sp-line: #d5cdbe;
+  --sp-brass: #6b4e16;
+  --sp-brass-ink: #fff8ec;
+  --sp-soil: #c9b89a;
+  --sp-water: #21586e;
+  --sp-leaf: #3e6b4e;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--sp-canvas);
+    color: var(--sp-ink);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--sp-brass);
+    color: var(--sp-brass-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+.meter-fill {
+  transition: width 200ms ease;
+}
+
+.plate-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--sp-canvas);
+}
+
+.plate-svg text {
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+.know-block summary {
+  list-style: none;
+}
+
+.know-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.header-safe {
+  padding-top: max(0px, env(safe-area-inset-top));
+}
+
+.nav-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter-fill {
+    transition: none;
+  }
+}
