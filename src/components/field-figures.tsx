@@ -842,7 +842,11 @@ export function PhotoPlate({ plate }: { plate: Illustration }) {
         </p>
       </div>
       {plate.src ? (
-        <img src={plate.src} alt={plate.alt} className="block w-full" />
+        <img
+          src={plate.src.startsWith("/") ? `${import.meta.env.BASE_URL}${plate.src.slice(1)}` : plate.src}
+          alt={plate.alt}
+          className="block w-full"
+        />
       ) : null}
       <p className="px-3 pt-3 text-base leading-relaxed text-ink">{plate.description}</p>
       <figcaption className="px-3 py-3 text-sm leading-relaxed text-muted">{plate.caption}</figcaption>

@@ -6,6 +6,8 @@ import { AppShell } from "@/components/app-shell";
 import { PwaRuntime } from "@/components/pwa-runtime";
 import appCss from "../styles.css?url";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const THEME_BOOT = `(function(){try{var t=localStorage.getItem("stewards-path-theme");document.documentElement.dataset.theme=t==="light"?"light":"dark";}catch(e){document.documentElement.dataset.theme="dark";}})();`;
 
 export const Route = createRootRoute({
@@ -23,10 +25,10 @@ export const Route = createRootRoute({
       { name: "apple-mobile-web-app-title", content: "Steward's Path" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/svg+xml", href: asset("/favicon.svg") },
       { rel: "stylesheet", href: appCss },
-      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
-      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
+      { rel: "manifest", href: asset("/manifest.webmanifest") },
+      { rel: "apple-touch-icon", href: asset("/__grok/icon-180.png") },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

@@ -2,7 +2,7 @@
    Network-first for pages you have opened, cache-first fallback for assets.
    Registered only in production so the dev preview is not stuck on a stale shell.
    Cache name: bump it when the offline strategy changes. */
-const CACHE = "stewards-path-v1";
+const CACHE = "stewards-path-v3";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
@@ -38,18 +38,22 @@ async function networkFirst(request) {
   const cache = await caches.open(CACHE);
   try {
     const fresh = await fetch(request);
-    if (fresh && fresh.ok) cache.put(request, fresh.clone());
-    return fresh;
+    if (fresh && fresh.ok) {
+      cache.put(request, fresh.clone());
+      return fresh;
+    }
   } catch {
     const cached = await cache.match(request);
     if (cached) return cached;
-    const home = await cache.match("/");
-    if (home) return home;
-    return new Response(
-      "Steward's Path is not stored on this phone yet. Open it once while you have a signal.",
-      { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } },
-    );
   }
+  const home = await cache.match(new URL("./", self.registration.scope));
+  if (home) return home;
+  const root = await cache.match("/");
+  if (root) return root;
+  return new Response(
+    "Steward's Path is not stored on this phone yet. Open it once while you have a signal.",
+    { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } },
+  );
 }
 
 async function staleWhileRevalidate(request) {

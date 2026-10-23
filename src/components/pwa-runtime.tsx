@@ -55,7 +55,7 @@ export function PwaRuntime() {
   useEffect(() => {
     const unbind = bindInstall();
     if (import.meta.env.PROD && "serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+      navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => undefined);
     }
     return unbind;
   }, []);

@@ -4,7 +4,13 @@ Field skills for reserves and Raven Flock. A mobile-first notebook you can insta
 
 Lessons cover trails, plants and water, civil basics, solar and batteries, Raven Flock business, and small coding tools. Progress, notes, bookmarks, and quiz scores stay on the device (IndexedDB, with a local backup). New lessons can be pasted as JSON — no rebuild.
 
-## Run it
+## Play it
+
+[https://dust2ash7.github.io/stewards-path/](https://dust2ash7.github.io/stewards-path/)
+
+Open that link in Safari if you want it on your iPhone home screen. Progress stays on the phone.
+
+## Run it locally
 
 ```bash
 npm install
