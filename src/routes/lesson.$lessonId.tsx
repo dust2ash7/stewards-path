@@ -75,6 +75,9 @@ function LessonPage() {
             </>
           )}
         </Button>
+        {record.completed ? (
+          <p className="text-center text-sm text-muted">Saved on this phone.</p>
+        ) : null}
         {following ? (
           <Link
             to="/lesson/$lessonId"

@@ -97,6 +97,14 @@ function readLocal(): Persisted | null {
   }
 }
 
+export function mirrorLocal(data: Persisted) {
+  writeLocal(data);
+}
+
+export function readLocalMirror(): Persisted | null {
+  return readLocal();
+}
+
 function writeLocal(data: Persisted) {
   try {
     localStorage.setItem(LS_KEY, JSON.stringify(data));

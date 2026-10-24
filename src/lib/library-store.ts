@@ -17,6 +17,8 @@ import {
   EMPTY_PERSISTED,
   THEME_KEY,
   loadPersisted,
+  mirrorLocal,
+  readLocalMirror,
   savePersisted,
   type Persisted,
 } from "@/lib/persist";
@@ -45,6 +47,7 @@ const serverState: State = {
 let state: State = serverState;
 const listeners = new Set<() => void>();
 let saveQueue: Promise<void> = Promise.resolve();
+const pendingUpdates: Array<(current: State) => State> = [];
 
 function emit() {
   for (const listener of listeners) listener();
@@ -61,7 +64,30 @@ function persistedSlice(next: State): Persisted {
 function queueSave() {
   if (!state.ready) return;
   const snapshot = persistedSlice(state);
+  // Write the phone copy now. IndexedDB follows, but a closed tab must not drop a finished lesson.
+  mirrorLocal(snapshot);
   saveQueue = saveQueue.then(() => savePersisted(snapshot)).catch(() => undefined);
+}
+
+function commit(update: (current: State) => State) {
+  const next = update(state);
+  if (next === state) return;
+  if (!state.ready) {
+    pendingUpdates.push(update);
+    state = next;
+    emit();
+    return;
+  }
+  state = next;
+  emit();
+  queueSave();
+}
+
+function replayPending(base: State): State {
+  let next = base;
+  for (const update of pendingUpdates) next = update(next);
+  pendingUpdates.length = 0;
+  return next;
 }
 
 export function subscribe(listener: () => void) {
@@ -84,14 +110,16 @@ export function hydrate(data: Persisted) {
   } catch {
     theme = "dark";
   }
-  state = {
+  const hadPending = pendingUpdates.length > 0;
+  state = replayPending({
     ready: true,
     importedLessons: data.importedLessons,
     progress: data.progress,
     lastLessonId: data.lastLessonId,
     theme,
-  };
+  });
   emit();
+  if (hadPending) queueSave();
 }
 
 export function lessonsFrom(next: State = state): LessonView[] {
@@ -110,172 +138,141 @@ export function setTheme(theme: ThemeName) {
 }
 
 export function touchLesson(id: string) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
   const now = new Date().toISOString();
-  state = {
-    ...state,
-    lastLessonId: id,
-    progress: {
-      ...state.progress,
-      [id]: { ...current, lastViewed: now },
-    },
-  };
-  emit();
-  queueSave();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    return {
+      ...current,
+      lastLessonId: id,
+      progress: {
+        ...current.progress,
+        [id]: { ...prior, lastViewed: now },
+      },
+    };
+  });
 }
 
 export function setCompleted(id: string, completed: boolean) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: {
-        ...current,
-        completed,
-        completedAt: completed ? new Date().toISOString() : null,
+  const completedAt = completed ? new Date().toISOString() : null;
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    return {
+      ...current,
+      progress: {
+        ...current.progress,
+        [id]: { ...prior, completed, completedAt },
       },
-    },
-  };
-  emit();
-  queueSave();
+    };
+  });
 }
 
 export function setBookmark(id: string, bookmarked: boolean) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: { ...current, bookmarked },
-    },
-  };
-  emit();
-  queueSave();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    return {
+      ...current,
+      progress: { ...current.progress, [id]: { ...prior, bookmarked } },
+    };
+  });
 }
 
 export function setNotes(id: string, notes: string) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
   const clipped = notes.slice(0, 20_000);
-  if (current.notes === clipped && state.progress[id]) return;
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: { ...current, notes: clipped },
-    },
-  };
-  emit();
-  queueSave();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    if (prior.notes === clipped && current.progress[id]) return current;
+    return {
+      ...current,
+      progress: { ...current.progress, [id]: { ...prior, notes: clipped } },
+    };
+  });
 }
 
 export function setTryNotes(id: string, tryNotes: string) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
   const clipped = tryNotes.slice(0, 20_000);
-  if (current.tryNotes === clipped && state.progress[id]) return;
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: { ...current, tryNotes: clipped },
-    },
-  };
-  emit();
-  queueSave();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    if (prior.tryNotes === clipped && current.progress[id]) return current;
+    return {
+      ...current,
+      progress: { ...current.progress, [id]: { ...prior, tryNotes: clipped } },
+    };
+  });
 }
 
 export function setFieldCheck(id: string, checkId: string, done: boolean) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
-  const fieldChecks = { ...current.fieldChecks };
-  if (done) fieldChecks[checkId] = new Date().toISOString();
-  else delete fieldChecks[checkId];
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: { ...current, fieldChecks },
-    },
-  };
-  emit();
-  queueSave();
+  const at = new Date().toISOString();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    const fieldChecks = { ...prior.fieldChecks };
+    if (done) fieldChecks[checkId] = at;
+    else delete fieldChecks[checkId];
+    return {
+      ...current,
+      progress: { ...current.progress, [id]: { ...prior, fieldChecks } },
+    };
+  });
 }
 
 export function setQuizScore(id: string, correct: number, total: number) {
-  if (!state.ready) return;
-  const current = progressFor(state.progress, id);
-  state = {
-    ...state,
-    progress: {
-      ...state.progress,
-      [id]: {
-        ...current,
-        quizScore: { correct, total, at: new Date().toISOString() },
+  const at = new Date().toISOString();
+  commit((current) => {
+    const prior = progressFor(current.progress, id);
+    return {
+      ...current,
+      progress: {
+        ...current.progress,
+        [id]: {
+          ...prior,
+          completed: true,
+          completedAt: prior.completedAt ?? at,
+          quizScore: { correct, total, at },
+        },
       },
-    },
-  };
-  emit();
-  queueSave();
+    };
+  });
 }
 
 export function importLessons(incoming: Lesson[]) {
-  if (!state.ready) return;
-  const byId = new Map(state.importedLessons.map((lesson) => [lesson.id, lesson]));
-  for (const lesson of incoming) byId.set(lesson.id, lesson);
-  const seen = new Set<string>();
-  const next: Lesson[] = [];
-  for (const lesson of state.importedLessons) {
-    const updated = byId.get(lesson.id);
-    if (updated) next.push(updated);
-    seen.add(lesson.id);
-  }
-  for (const lesson of incoming) {
-    if (!seen.has(lesson.id)) next.push(lesson);
-  }
-  state = { ...state, importedLessons: next };
-  emit();
-  queueSave();
+  commit((current) => {
+    const byId = new Map(current.importedLessons.map((lesson) => [lesson.id, lesson]));
+    for (const lesson of incoming) byId.set(lesson.id, lesson);
+    const seen = new Set<string>();
+    const next: Lesson[] = [];
+    for (const lesson of current.importedLessons) {
+      const updated = byId.get(lesson.id);
+      if (updated) next.push(updated);
+      seen.add(lesson.id);
+    }
+    for (const lesson of incoming) {
+      if (!seen.has(lesson.id)) next.push(lesson);
+    }
+    return { ...current, importedLessons: next };
+  });
 }
 
 export function removeImported(id: string) {
-  if (!state.ready) return;
-  state = {
-    ...state,
-    importedLessons: state.importedLessons.filter((lesson) => lesson.id !== id),
-  };
-  emit();
-  queueSave();
+  commit((current) => ({
+    ...current,
+    importedLessons: current.importedLessons.filter((lesson) => lesson.id !== id),
+  }));
 }
 
 export function clearImported() {
-  if (!state.ready) return;
-  state = { ...state, importedLessons: [] };
-  emit();
-  queueSave();
+  commit((current) => ({ ...current, importedLessons: [] }));
 }
 
 export function resetProgress() {
-  if (!state.ready) return;
-  state = { ...state, progress: {}, lastLessonId: null };
-  emit();
-  queueSave();
+  commit((current) => ({ ...current, progress: {}, lastLessonId: null }));
 }
 
 export function restoreBackup(data: Persisted) {
-  if (!state.ready) return;
-  state = {
-    ...state,
+  commit((current) => ({
+    ...current,
     importedLessons: data.importedLessons,
     progress: data.progress,
     lastLessonId: data.lastLessonId,
-  };
-  emit();
-  queueSave();
+  }));
 }
 
 export function useLibrary() {
@@ -297,8 +294,31 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
       .catch(() => {
         if (!cancel) hydrate(EMPTY_PERSISTED);
       });
+    const flush = () => {
+      if (state.ready) {
+        const snapshot = persistedSlice(state);
+        mirrorLocal(snapshot);
+        void savePersisted(snapshot);
+        return;
+      }
+      if (pendingUpdates.length === 0) return;
+      const stored = readLocalMirror() ?? EMPTY_PERSISTED;
+      let merged: State = {
+        ready: true,
+        importedLessons: stored.importedLessons,
+        progress: stored.progress,
+        lastLessonId: stored.lastLessonId,
+        theme: state.theme,
+      };
+      for (const update of pendingUpdates) merged = update(merged);
+      const snapshot = persistedSlice(merged);
+      mirrorLocal(snapshot);
+      void savePersisted(snapshot);
+    };
+    window.addEventListener("pagehide", flush);
     return () => {
       cancel = true;
+      window.removeEventListener("pagehide", flush);
     };
   }, []);
   return children;
