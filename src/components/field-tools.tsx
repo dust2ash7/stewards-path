@@ -3,6 +3,7 @@ import {
   gradeQuiz,
   optionIsCorrect,
   questionIsCorrect,
+  scoreNote,
   type InteractiveElement,
   type LessonProgress,
   type LessonView,
@@ -704,7 +705,15 @@ function shuffleOrder(count: number): number[] {
   return order;
 }
 
-function QuizBlock({ lesson, lastScore }: { lesson: LessonView; lastScore: LessonProgress["quizScore"] }) {
+function QuizBlock({
+  lesson,
+  lastScore,
+  onScored,
+}: {
+  lesson: LessonView;
+  lastScore: LessonProgress["quizScore"];
+  onScored?: (result: { correct: number; total: number }) => void;
+}) {
   const questions = lesson.quiz ?? [];
   const [responses, setResponses] = useState<Record<number, QuizResponse>>(() => {
     const seeded: Record<number, QuizResponse> = {};
@@ -762,23 +771,28 @@ function QuizBlock({ lesson, lastScore }: { lesson: LessonView; lastScore: Lesso
           </li>
         ))}
       </ol>
-      <div className="flex flex-wrap gap-2">
-        {!submitted ? (
+      <div className={submitted ? "space-y-2" : "flex flex-wrap gap-2"}>
+        {!submitted || !grade ? (
           <Button
             disabled={!ready}
             onClick={() => {
               const result = gradeQuiz(questions, responses);
               setSubmitted(true);
               setQuizScore(lesson.id, result.correct, result.total);
+              onScored?.(result);
             }}
           >
             Score it
           </Button>
         ) : (
           <>
-            <p className="flex min-h-12 items-center text-lg font-semibold tabular-nums text-ink">
-              {grade?.correct} of {grade?.total}
+            <p className="font-display text-5xl tabular-nums text-ink">
+              {grade.correct}/{grade.total}
             </p>
+            <p className="text-base tabular-nums text-muted">
+              {Math.round((grade.correct / Math.max(grade.total, 1)) * 100)}%
+            </p>
+            <p className="max-w-sm text-lg leading-snug text-ink">{scoreNote(grade.correct, grade.total)}</p>
             <Button
               variant="ghost"
               onClick={() => {
@@ -930,10 +944,12 @@ export function LessonBody({
   lesson,
   record,
   ready,
+  onScored,
 }: {
   lesson: LessonView;
   record: LessonProgress;
   ready: boolean;
+  onScored?: (result: { correct: number; total: number }) => void;
 }) {
   const usedDiagrams = new Set<string>();
   const plates: ReactNode[] = [];
@@ -1005,7 +1021,7 @@ export function LessonBody({
         </ul>
       </section>
 
-      <QuizBlock key={lesson.id} lesson={lesson} lastScore={record.quizScore} />
+      <QuizBlock key={lesson.id} lesson={lesson} lastScore={record.quizScore} onScored={onScored} />
 
       {lesson.resources.length > 0 ? (
         <section className="mt-8">

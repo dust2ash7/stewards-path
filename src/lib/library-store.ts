@@ -18,6 +18,8 @@ import {
   THEME_KEY,
   loadPersisted,
   mirrorLocal,
+  preferPersisted,
+  progressStamp,
   readLocalMirror,
   savePersisted,
   type Persisted,
@@ -48,6 +50,7 @@ let state: State = serverState;
 const listeners = new Set<() => void>();
 let saveQueue: Promise<void> = Promise.resolve();
 const pendingUpdates: Array<(current: State) => State> = [];
+let savedAt = "";
 
 function emit() {
   for (const listener of listeners) listener();
@@ -58,11 +61,13 @@ function persistedSlice(next: State): Persisted {
     importedLessons: next.importedLessons,
     progress: next.progress,
     lastLessonId: next.lastLessonId,
+    savedAt: savedAt || undefined,
   };
 }
 
 function queueSave() {
   if (!state.ready) return;
+  savedAt = new Date().toISOString();
   const snapshot = persistedSlice(state);
   // Write the phone copy now. IndexedDB follows, but a closed tab must not drop a finished lesson.
   mirrorLocal(snapshot);
@@ -111,6 +116,7 @@ export function hydrate(data: Persisted) {
     theme = "dark";
   }
   const hadPending = pendingUpdates.length > 0;
+  savedAt = data.savedAt ?? "";
   state = replayPending({
     ready: true,
     importedLessons: data.importedLessons,
@@ -296,6 +302,7 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
       });
     const flush = () => {
       if (state.ready) {
+        if (!savedAt) savedAt = new Date().toISOString();
         const snapshot = persistedSlice(state);
         mirrorLocal(snapshot);
         void savePersisted(snapshot);
@@ -315,10 +322,22 @@ export function LibraryProvider({ children }: { children: ReactNode }) {
       mirrorLocal(snapshot);
       void savePersisted(snapshot);
     };
+    const pullNewer = () => {
+      if (!state.ready) return;
+      const disk = readLocalMirror();
+      if (!disk) return;
+      const memory = persistedSlice(state);
+      const newer = preferPersisted(disk, memory);
+      if (newer === disk && progressStamp(disk) > progressStamp(memory)) hydrate(disk);
+    };
     window.addEventListener("pagehide", flush);
+    window.addEventListener("pageshow", pullNewer);
+    window.addEventListener("focus", pullNewer);
     return () => {
       cancel = true;
       window.removeEventListener("pagehide", flush);
+      window.removeEventListener("pageshow", pullNewer);
+      window.removeEventListener("focus", pullNewer);
     };
   }, []);
   return children;

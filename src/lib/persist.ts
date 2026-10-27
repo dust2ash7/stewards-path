@@ -18,6 +18,8 @@ export type Persisted = {
   importedLessons: Lesson[];
   progress: Record<string, LessonProgress>;
   lastLessonId: string | null;
+  /** When this copy was written. The newer stamp wins if IndexedDB and localStorage disagree. */
+  savedAt?: string;
 };
 
 export const EMPTY_PERSISTED: Persisted = {
@@ -84,6 +86,7 @@ export function sanitizePersisted(value: unknown): Persisted | null {
     importedLessons,
     progress,
     lastLessonId: typeof row.lastLessonId === "string" ? row.lastLessonId : null,
+    savedAt: typeof row.savedAt === "string" ? row.savedAt : undefined,
   };
 }
 
@@ -156,22 +159,49 @@ async function idbSet(data: Persisted): Promise<void> {
   }
 }
 
-export async function loadPersisted(): Promise<Persisted> {
-  try {
-    const fromDb = await idbGet();
-    if (fromDb) {
-      writeLocal(fromDb);
-      return fromDb;
+export function progressStamp(data: Persisted): number {
+  const saved = data.savedAt ? Date.parse(data.savedAt) : NaN;
+  if (Number.isFinite(saved)) return saved;
+  let latest = 0;
+  for (const row of Object.values(data.progress)) {
+    const marks = [row.completedAt, row.lastViewed, row.quizScore?.at, ...Object.values(row.fieldChecks ?? {})];
+    for (const value of marks) {
+      const time = value ? Date.parse(value) : NaN;
+      if (Number.isFinite(time) && time > latest) latest = time;
     }
-    const fromLocal = readLocal();
-    if (fromLocal) {
-      await idbSet(fromLocal).catch(() => undefined);
-      return fromLocal;
-    }
-    return EMPTY_PERSISTED;
-  } catch {
-    return readLocal() ?? EMPTY_PERSISTED;
   }
+  return latest;
+}
+
+function completedCount(data: Persisted): number {
+  return Object.values(data.progress).filter((row) => row.completed).length;
+}
+
+/** Prefer the copy that was written last. A finished lesson must not lose to an older database row. */
+export function preferPersisted(primary: Persisted | null, secondary: Persisted | null): Persisted {
+  if (!primary) return secondary ?? EMPTY_PERSISTED;
+  if (!secondary) return primary;
+  const primaryStamp = progressStamp(primary);
+  const secondaryStamp = progressStamp(secondary);
+  if (primaryStamp !== secondaryStamp) return primaryStamp > secondaryStamp ? primary : secondary;
+  return completedCount(primary) >= completedCount(secondary) ? primary : secondary;
+}
+
+export async function loadPersisted(): Promise<Persisted> {
+  let fromDb: Persisted | null = null;
+  try {
+    const stored = await idbGet();
+    if (stored) fromDb = stored;
+  } catch {
+    fromDb = null;
+  }
+  const fromLocal = readLocal();
+  const winner = preferPersisted(fromDb, fromLocal);
+  if (fromLocal && winner === fromLocal && fromDb !== fromLocal) {
+    await idbSet(fromLocal).catch(() => undefined);
+  }
+  if (fromDb && winner === fromDb) writeLocal(fromDb);
+  return winner;
 }
 
 export async function savePersisted(data: Persisted): Promise<void> {

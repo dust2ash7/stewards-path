@@ -2,7 +2,7 @@
    Network-first for pages you have opened, cache-first fallback for assets.
    Registered only in production so the dev preview is not stuck on a stale shell.
    Cache name: bump it when the offline strategy changes. */
-const CACHE = "stewards-path-v3";
+const CACHE = "stewards-path-v4";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());

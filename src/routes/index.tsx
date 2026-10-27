@@ -4,7 +4,7 @@ import { groupLessons, fieldChecksThisWeek, pickContinue, progressFor, slugifyCa
 import { useLibrary } from "@/lib/library-store";
 import { runInstallPrompt, useInstallPrompt } from "@/components/pwa-runtime";
 import { Meter, PageIntro, cx } from "@/components/ui";
-import { Bookmark, ChevronRight } from "lucide-react";
+import { Bookmark, Check, ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -87,24 +87,53 @@ function HomePage() {
             const groupPct = count === 0 ? 0 : (finished / count) * 100;
             return (
               <li key={group.slug}>
-                <Link
-                  to="/category/$slug"
-                  params={{ slug: slugifyCategory(group.name) }}
-                  className="block rounded-2xl border border-line bg-surface px-4 py-3 active:bg-elevated"
-                >
-                  <span className="flex items-start justify-between gap-3">
-                    <span>
-                      <span className="block font-display text-xl leading-snug text-ink">{group.name}</span>
-                      <span className="mt-1 block text-sm text-muted">
-                        {count === 0 ? "No lessons yet" : `${finished} of ${count} done`}
+                <div className="rounded-2xl border border-line bg-surface px-4 py-3">
+                  <Link
+                    to="/category/$slug"
+                    params={{ slug: slugifyCategory(group.name) }}
+                    className="block active:bg-elevated"
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <span>
+                        <span className="block font-display text-xl leading-snug text-ink">{group.name}</span>
+                        <span className="mt-1 block text-sm text-muted">
+                          {count === 0 ? "No lessons yet" : `${finished} of ${count} done`}
+                        </span>
                       </span>
+                      <ChevronRight className="mt-1 size-5 shrink-0 text-muted" aria-hidden />
                     </span>
-                    <ChevronRight className="mt-1 size-5 shrink-0 text-muted" aria-hidden />
-                  </span>
-                  <span className="mt-3 block">
-                    <Meter value={groupPct} label={`${group.name} progress`} />
-                  </span>
-                </Link>
+                    <span className="mt-3 block">
+                      <Meter value={groupPct} label={`${group.name} progress`} />
+                    </span>
+                  </Link>
+                  <ul className="mt-3 space-y-1 border-t border-line pt-2">
+                    {group.lessons.map((lesson) => {
+                      const record = progressFor(progress, lesson.id);
+                      return (
+                        <li key={lesson.id}>
+                          <Link
+                            to="/lesson/$lessonId"
+                            params={{ lessonId: lesson.id }}
+                            className="flex min-h-11 items-center gap-3 rounded-xl px-1 active:bg-elevated"
+                          >
+                            <span
+                              className={cx(
+                                "flex size-6 shrink-0 items-center justify-center rounded-full border",
+                                record.completed ? "border-brass bg-brass text-brass-ink" : "border-line",
+                              )}
+                              aria-hidden
+                            >
+                              {record.completed ? <Check className="size-3.5" strokeWidth={2.5} /> : null}
+                            </span>
+                            <span className={cx("text-base leading-snug", record.completed ? "text-muted" : "text-ink")}>
+                              {lesson.title}
+                            </span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </li>
             );
           })}

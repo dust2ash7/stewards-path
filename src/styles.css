@@ -109,8 +109,27 @@
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
+.celebrate-card {
+  animation: sp-rise 280ms ease-out;
+}
+
+@keyframes sp-rise {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .meter-fill {
     transition: none;
+  }
+
+  .celebrate-card {
+    animation: none;
   }
 }

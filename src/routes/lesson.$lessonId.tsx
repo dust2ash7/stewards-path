@@ -4,6 +4,7 @@ import { Bookmark, Check } from "lucide-react";
 import { nextLesson, slugifyCategory, type LessonView } from "@/lib/domain";
 import { removeImported, setBookmark, setCompleted, touchLesson, useLibrary } from "@/lib/library-store";
 import { LessonBody } from "@/components/field-tools";
+import { LessonComplete } from "@/components/lesson-complete";
 import { Button, LevelMark, PageIntro, cx } from "@/components/ui";
 
 export const Route = createFileRoute("/lesson/$lessonId")({
@@ -14,6 +15,7 @@ function LessonPage() {
   const { lessonId } = Route.useParams();
   const library = useLibrary();
   const lesson = library.lessons.find((item) => item.id === lessonId);
+  const [celebration, setCelebration] = useState<{ score: { correct: number; total: number } | null } | null>(null);
 
   useEffect(() => {
     if (!library.ready) return;
@@ -59,13 +61,22 @@ function LessonPage() {
         </button>
       </div>
 
-      <LessonBody lesson={lesson} record={record} ready={library.ready} />
+      <LessonBody
+        lesson={lesson}
+        record={record}
+        ready={library.ready}
+        onScored={(score) => setCelebration({ score })}
+      />
 
       <div className="mt-8 space-y-3">
         <Button
           className="w-full"
           variant={record.completed ? "ghost" : "primary"}
-          onClick={() => setCompleted(lesson.id, !record.completed)}
+          onClick={() => {
+            const nextDone = !record.completed;
+            setCompleted(lesson.id, nextDone);
+            if (nextDone && !(lesson.quiz && lesson.quiz.length > 0)) setCelebration({ score: null });
+          }}
         >
           {record.completed ? (
             "Mark as not done"
@@ -102,6 +113,14 @@ function LessonPage() {
       </p>
 
       {lesson.source === "imported" ? <RemoveImported lesson={lesson} /> : null}
+      {celebration ? (
+        <LessonComplete
+          lesson={lesson}
+          score={celebration.score}
+          next={following}
+          onClose={() => setCelebration(null)}
+        />
+      ) : null}
     </article>
   );
 }

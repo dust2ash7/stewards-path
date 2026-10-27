@@ -288,6 +288,16 @@ export function gradeQuiz(
   return { correct, total: questions.length };
 }
 
+/** A short line after a check. Practical, not a cheer. */
+export function scoreNote(correct: number, total: number): string {
+  if (total <= 0) return "Marked done. It is saved on this phone.";
+  const ratio = correct / total;
+  if (ratio >= 1) return "You had the field right.";
+  if (ratio >= 0.8) return "Solid. Take the misses back outside.";
+  if (ratio >= 0.5) return "Enough to start. Reread the ones you missed.";
+  return "Not yet. Walk the lesson once more, then try the check again.";
+}
+
 export function nextLesson(lessons: LessonView[], currentId: string): LessonView | null {
   const index = lessons.findIndex((lesson) => lesson.id === currentId);
   if (index === -1) return null;
